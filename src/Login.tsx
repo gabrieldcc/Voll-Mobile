@@ -17,16 +17,9 @@ export default function Login() {
         <Image
           source={Logo} alt={"Logo Voll"} />
 
-        {/* <Text
-          fontSize="2xl"
-          fontWeight="bold"
-          color="gray.500"
-          textAlign="center"
-          marginTop={5}
-        > Faça login em sua conta 
-        </Text> */}
-
-        <Titulo>
+        <Titulo
+        color='blue.500'
+        >
           Faça login em sua conta
         </Titulo>
 
