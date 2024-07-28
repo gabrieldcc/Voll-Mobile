@@ -1,4 +1,4 @@
-import { VStack, Image, Text, Box, FormControl, Input, Button, Link } from 'native-base'
+import { VStack, Image, Box, Checkbox } from 'native-base'
 import { TouchableOpacity } from 'react-native';
 import Logo from './assets/Logo.png'
 import { SafeAreaView } from 'react-native';
@@ -39,6 +39,21 @@ export default function Cadastro() {
           placeholder: 'Digite seu CEP'
         }
       ]
+    },
+    {
+      id: 3,
+      titulo: 'Para finalizar, quais são os seus planos:',
+      entradaTexto: [],
+      checkBox: [
+        {
+          id: 1,
+          value: 'Sulamerica'
+        },
+        {
+          id: 2,
+          value: 'Unimed'
+        }
+      ]
     }
   ]
 
@@ -46,6 +61,13 @@ export default function Cadastro() {
     console.log("Botão pressionado!");
     if (numeroSecao < secoes.length - 1) {
       setNumSecao(numeroSecao + 1)
+    }
+  }
+
+  function voltarSecao() {
+    console.log("Botão pressionado!");
+    if (numeroSecao > 0) {
+      setNumSecao(numeroSecao - 1)
     }
   }
 
@@ -64,7 +86,6 @@ export default function Cadastro() {
         <Titulo> {secoes[numeroSecao].titulo} </Titulo>
 
         <Box>
-
           {
             secoes[numeroSecao].entradaTexto.map(entrada => {
               return <EntradaTexto
@@ -74,10 +95,31 @@ export default function Cadastro() {
               />
             })
           }
-
         </Box>
 
-        <Botao onPress={avancarSecao}>
+        <Box>
+          {
+            secoes[numeroSecao].checkBox?.map(checkbox => {
+              return <Checkbox
+                key={checkbox.id}
+                value={checkbox.value}>
+                {checkbox.value}
+              </Checkbox>
+            })
+          }
+        </Box>
+
+        {
+          numeroSecao > 0 && <Botao
+            bgColor="gray.400"
+            onPress={voltarSecao}>
+            Voltar
+          </Botao>
+        }
+
+        <Botao
+          onPress={avancarSecao}
+          marginTop={4}>
           Avançar
         </Botao>
 
