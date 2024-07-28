@@ -3,6 +3,7 @@ import { TouchableOpacity } from 'react-native';
 import Logo from './assets/Logo.png'
 import { SafeAreaView } from 'react-native';
 import { Titulo } from './componentes/Titulo';
+import { Botao } from './componentes/Botao';
 
 export default function Login({navigation}) {
   return (
@@ -58,14 +59,10 @@ export default function Login({navigation}) {
           </FormControl>
         </Box>
 
-        <Button
-        width="100%"
-        backgroundColor='blue.800'
-        marginTop={10}
-        borderRadius='lg'
-        >
+        <Botao
+        onPress={()=> navigation.navigate('Tabs')}>
           Entrar
-        </Button>
+        </Botao>
 
         <Link 
         href='https://www.alura.com.br'
