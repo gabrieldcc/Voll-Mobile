@@ -17,11 +17,7 @@ export default function Login() {
         <Image
           source={Logo} alt={"Logo Voll"} />
 
-        <Titulo
-        color='blue.500'
-        >
-          Faça login em sua conta
-        </Titulo>
+        <Titulo> Faça login em sua conta </Titulo>
 
         <Box>
 
