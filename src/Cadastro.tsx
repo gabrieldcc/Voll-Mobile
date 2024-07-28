@@ -44,7 +44,9 @@ export default function Cadastro() {
 
   function avancarSecao() {
     console.log("Botão pressionado!");
-    setNumSecao(numeroSecao + 1)
+    if (numeroSecao < secoes.length - 1) {
+      setNumSecao(numeroSecao + 1)
+    }
   }
 
   return (
