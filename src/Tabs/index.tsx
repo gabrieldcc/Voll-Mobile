@@ -9,15 +9,26 @@ const Tab = createBottomTabNavigator()
 export default function Tabs() {
     return (
         <SafeAreaView style={{ flex: 1 }}>
-            <Tab.Navigator>
+            <Tab.Navigator
+                screenOptions={{
+                    tabBarStyle: {
+                        backgroundColor: "#002851"
+                    },
+                    tabBarActiveTintColor: "#339cff",
+                    tabBarInactiveTintColor: "#FFF"
+                }}
+            >
                 <Tab.Screen
                     name="Principal"
                     component={Principal}
                     options={{
                         headerShown: false,
-                        tabBarIcon: () => (
+                        tabBarIcon: ({ color, size }) => (
                             <Ionicons
-                                name="home"/>
+                                name="home"
+                                color={color}
+                                size={size}
+                            />
                         )
                     }}
                 />
@@ -26,9 +37,12 @@ export default function Tabs() {
                     component={Consultas}
                     options={{
                         headerShown: false,
-                        tabBarIcon: () => (
+                        tabBarIcon: ({ color, size }) => (
                             <Ionicons
-                                name="calendar"/>
+                                name="calendar"
+                                color={color}
+                                size={size}
+                            />
                         )
                     }}
                 />
