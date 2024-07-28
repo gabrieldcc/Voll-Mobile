@@ -4,7 +4,7 @@ import Logo from './assets/Logo.png'
 import { SafeAreaView } from 'react-native';
 import { Titulo } from './componentes/Titulo';
 
-export default function Login() {
+export default function Login({navigation}) {
   return (
     <SafeAreaView style={{ flex: 1 }}>
 
@@ -64,7 +64,7 @@ export default function Login() {
         marginTop={10}
         borderRadius='lg'
         >
-          Teste
+          Entrar
         </Button>
 
         <Link 
@@ -81,8 +81,13 @@ export default function Login() {
         marginTop='8'
         >
           <Text> Ainda não tem cadastro?  </Text>
-          <TouchableOpacity>
-            <Text  color='blue.500' >Faça seu cadastro!</Text>
+
+          <TouchableOpacity
+           onPress={()=> navigation.navigate('Cadastro')}>
+            <Text  
+            color='blue.500' >
+              Faça seu cadastro!
+              </Text>
             </TouchableOpacity>
         </Box>
 
