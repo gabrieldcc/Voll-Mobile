@@ -1,9 +1,12 @@
+import React from "react";
 import { VStack, Text } from "native-base";
 
 export default function Principal() {
     return (
         <VStack>
-            <Text>Principal</Text>
+            <Text>
+            Principal
+            </Text>
         </VStack>
     )
 }

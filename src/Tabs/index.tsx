@@ -1,8 +1,12 @@
+import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+
 import Principal from "./Principal";
 import Consultas from "./Consultas";
 import { SafeAreaView } from "react-native-safe-area-context";
 import Ionicons from 'react-native-vector-icons/Ionicons'
+import Explorar from "./Explorar";
+import Perfil from "./Perfil";
 
 const Tab = createBottomTabNavigator()
 
@@ -40,6 +44,34 @@ export default function Tabs() {
                         tabBarIcon: ({ color, size }) => (
                             <Ionicons
                                 name="calendar"
+                                color={color}
+                                size={size}
+                            />
+                        )
+                    }}
+                />
+                  <Tab.Screen
+                    name="Explorar"
+                    component={Explorar}
+                    options={{
+                        headerShown: false,
+                        tabBarIcon: ({ color, size }) => (
+                            <Ionicons
+                                name="search"
+                                color={color}
+                                size={size}
+                            />
+                        )
+                    }}
+                />
+                  <Tab.Screen
+                    name="Perfil"
+                    component={Perfil}
+                    options={{
+                        headerShown: false,
+                        tabBarIcon: ({ color, size }) => (
+                            <Ionicons
+                                name="person"
                                 color={color}
                                 size={size}
                             />

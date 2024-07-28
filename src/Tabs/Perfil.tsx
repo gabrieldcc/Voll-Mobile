@@ -1,9 +1,12 @@
+import React from "react";
 import { VStack, Text } from "native-base";
 
-export default function Principal() {
+export default function Perfil() {
     return (
         <VStack>
-            <Text>Principal</Text>
+            <Text>
+            Perfil
+            </Text>
         </VStack>
     )
 }
