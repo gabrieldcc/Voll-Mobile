@@ -64,7 +64,7 @@ export default function Login() {
         marginTop={10}
         borderRadius='lg'
         >
-          Entrar
+          Teste
         </Button>
 
         <Link 
