@@ -1,61 +1,17 @@
-import { VStack, Image, Box, Checkbox } from 'native-base'
-import { TouchableOpacity } from 'react-native';
+import { Image, Box, Checkbox, ScrollView, Text } from 'native-base'
 import Logo from './assets/Logo.png'
 import { SafeAreaView } from 'react-native';
 import { Titulo } from './componentes/Titulo';
 import { EntradaTexto } from './componentes/EntradaTexto';
 import { Botao } from './componentes/Botao';
 import { useState } from 'react';
+import { secoes } from './utils/CadastroEntradaTexto'
 
 export default function Cadastro() {
 
   const [numeroSecao, setNumSecao] = useState(0);
 
-  const secoes = [
-    {
-      id: 1,
-      titulo: 'Insira alguns dados básicos',
-      entradaTexto: [
-        {
-          id: 1,
-          label: 'Nome',
-          placeholder: 'Digite seu nome completo'
-        },
-        {
-          id: 1,
-          label: 'Email',
-          placeholder: 'Digite seu email'
-        }
-      ]
-    },
 
-    {
-      id: 2,
-      titulo: 'Agora, mais alguns dados sobre você:',
-      entradaTexto: [
-        {
-          id: 1,
-          label: 'CEP',
-          placeholder: 'Digite seu CEP'
-        }
-      ]
-    },
-    {
-      id: 3,
-      titulo: 'Para finalizar, quais são os seus planos:',
-      entradaTexto: [],
-      checkBox: [
-        {
-          id: 1,
-          value: 'Sulamerica'
-        },
-        {
-          id: 2,
-          value: 'Unimed'
-        }
-      ]
-    }
-  ]
 
   function avancarSecao() {
     console.log("Botão pressionado!");
@@ -74,20 +30,21 @@ export default function Cadastro() {
   return (
     <SafeAreaView style={{ flex: 1 }}>
 
-      <VStack
+      <ScrollView
         flex={1}
-        alignItems={"center"}
         p={5}
-        justifyContent="center"
       >
         <Image
-          source={Logo} alt={"Logo Voll"} />
+          source={Logo} 
+          alt={"Logo Voll"}
+          alignSelf="center"
+           />
 
         <Titulo> {secoes[numeroSecao].titulo} </Titulo>
 
         <Box>
           {
-            secoes[numeroSecao].entradaTexto.map(entrada => {
+            secoes[numeroSecao].entradaTexto?.map(entrada => {
               return <EntradaTexto
                 key={entrada.id}
                 label={entrada.label}
@@ -98,6 +55,14 @@ export default function Cadastro() {
         </Box>
 
         <Box>
+          <Text 
+          marginTop='2'
+          marginBottom='2'
+          color="blue.800"
+          fontWeight='bold'
+          fontSize='md'>
+            Selecione o plano:
+          </Text>
           {
             secoes[numeroSecao].checkBox?.map(checkbox => {
               return <Checkbox
@@ -119,11 +84,12 @@ export default function Cadastro() {
 
         <Botao
           onPress={avancarSecao}
-          marginTop={4}>
+          marginTop={4}
+          marginBottom={20}>
           Avançar
         </Botao>
 
-      </VStack>
+      </ScrollView>
 
     </SafeAreaView>
 
