@@ -1,3 +1,4 @@
+import React from 'react';
 import { Image, Box, Checkbox, ScrollView, Text } from 'native-base'
 import Logo from './assets/Logo.png'
 import { SafeAreaView } from 'react-native';
@@ -61,7 +62,7 @@ export default function Cadastro() {
           color="blue.800"
           fontWeight='bold'
           fontSize='md'>
-            Selecione o plano:
+            {secoes[numeroSecao].tituloCheckBox}
           </Text>
           {
             secoes[numeroSecao].checkBox?.map(checkbox => {
