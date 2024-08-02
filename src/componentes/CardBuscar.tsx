@@ -3,14 +3,14 @@ import { Box, Input, VStack } from 'native-base'
 import { Botao } from './Botao'
 
 
-export function Buscar() {
+export function CardBuscar() {
     return (
         <VStack
         w="100%"
         bg={"white"}
         p="5"
         borderRadius="lg"
-        shadow="2"
+        shadow="1"
         mb={5}
         color="blue.500" >
         <Box>

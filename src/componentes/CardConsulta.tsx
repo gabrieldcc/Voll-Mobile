@@ -25,7 +25,7 @@ foiAntendido
             bg={foiAntendido ? "blue.100" : "white"}
             p="5"
             borderRadius="lg"
-            shadow="2"
+            shadow="1"
             mb={5}
         >
             <VStack flexDir="row">
