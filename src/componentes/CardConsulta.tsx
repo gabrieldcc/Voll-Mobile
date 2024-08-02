@@ -26,12 +26,12 @@ foiAntendido
             p="5"
             borderRadius="lg"
             shadow="2"
+            mb={5}
         >
             <VStack flexDir="row">
                 <Avatar
                     size='xl'
                     source={{ uri: foto }}
-                    fallbackSource={{ uri: foto }}
                 />
                 <VStack pl="4">
                     <Text fontSize="md" fontWeight="bold">{nome}</Text>
